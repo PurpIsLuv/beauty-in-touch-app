@@ -1,10 +1,25 @@
-//* COLORS
+// * COLORS
 $color--primary: #454C54;
 $color--secondary: #616b77;
 $color--alert: #e77373;
+$color--link: #4a79b1;
+$color--link-active: #1a28a0;
 
 $color--gray: #acb3bc;
+$color--gray1: #8d98a5;
 $color--white: #fff;
 $color--dark: #000;
 
-//* WIDTH
+// * FONT SIZE
+$fs--xxs: 9px;
+$fs--xs: 10px;
+$fs--sm: 12px;
+$fs--md: 14px;
+$fs--lg: 16px;
+
+// * LINE HEIGHT
+$lh--xxs: 11px;
+$lh--xs: 12px;
+$lh--sm: 14px;
+$lh--md: 16px;
+$lh--lg: 19px;
