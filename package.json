@@ -8,7 +8,9 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "lint": "npm run lint:js",
+    "deploy:live": "npm run build && aws s3 sync dist/    s3://beauty-in-touch-cdn --delete && npm run-script invalidate-cache:live",
+    "invalidate-cache:live": "aws configure set preview.cloudfront true && aws cloudfront create-invalidation --distribution-id E3V1DXQFYMASZ7 --paths '/*'"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
