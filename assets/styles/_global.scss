@@ -78,3 +78,51 @@ h2, .h2 {
     opacity: 0.7;
   }
 }
+
+// FLEX
+// .d-flex
+.d-flex {
+  display: flex;
+  // .d-flex--column
+  &--column {
+    flex-direction: column;
+  }
+}
+// .justify
+.justify {
+  // .justify--start
+  &--start {
+    justify-content: flex-start;
+  }
+  // .justify--center
+  &--center {
+    justify-content: center;
+  }
+  // .justify--end
+  &--end {
+    justify-content: flex-end;
+  }
+  // .justify--between
+  &--between {
+    justify-content: space-between;
+  }
+  // .justify--around
+  &--around {
+    justify-content: space-around;
+  }
+}
+// .justify
+.align {
+  // .justify--start
+  &--start {
+    align-items: flex-start;
+  }
+  // .justify--center
+  &--center {
+    align-items: center;
+  }
+  // .justify--end
+  &--end {
+    align-items: flex-end;
+  }
+}
