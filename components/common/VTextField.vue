@@ -10,7 +10,7 @@
     </label>
     <input
       id="input-id"
-      type="text"
+      :type="type"
       :class="inputClassList"
       :placeholder="placeholder"
       :disabled="disabled"
@@ -40,6 +40,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    type: {
+      type: String,
+      default: 'text'
     }
   },
   computed: {
@@ -62,7 +66,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v-text-field {
   // .v-text-field__title
   &__title {

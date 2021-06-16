@@ -25,7 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/global-components'
+    '@/plugins/global-components',
+    '@/plugins/v-click-outside'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

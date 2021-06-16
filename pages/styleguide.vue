@@ -20,6 +20,7 @@
     <h2>Input</h2>
     <div class="d-flex d-flex--column">
       <v-text-field title="Телефон" />
+      <v-autocomplete title="Select" />
     </div>
   </div>
 </template>
