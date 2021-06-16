@@ -19,7 +19,7 @@
     </div>
     <h2>Input</h2>
     <div class="d-flex d-flex--column">
-      <v-text-field title="Телефон" error-message="Введите номер телефона" />
+      <v-text-field title="Телефон" />
     </div>
   </div>
 </template>

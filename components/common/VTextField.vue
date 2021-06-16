@@ -11,11 +11,9 @@
     <input
       id="input-id"
       type="text"
-      class="
-        v-text-field__input v-text-field__input--default
-        text text--secondary
-      "
+      :class="inputClassList"
       :placeholder="placeholder"
+      :disabled="disabled"
     />
   </div>
 </template>
@@ -38,12 +36,26 @@ export default {
     errorMessage: {
       type: String,
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     wrapperStyleList() {
       return {
         width: this.width
+      }
+    },
+    inputClassList() {
+      return {
+        'v-text-field__input': true,
+        'v-text-field__input--default': true,
+        text: true,
+        'text--secondary': true,
+        'v-text-field__input--error': !!this.errorMessage,
+        'v-text-field__input--disabled': this.disabled
       }
     }
   }
@@ -71,9 +83,11 @@ export default {
     border-radius: 2px;
     outline: none;
     cursor: pointer;
+    transition: 0.3s linear;
     &:hover,
     &--hover {
       box-shadow: 0px 4px 10px rgba($color: #63b9f8, $alpha: 0.25);
+      transition: 0.3s linear;
     }
     // .v-text-field--active .v-text-field--focus
     &:active,
@@ -81,6 +95,7 @@ export default {
     &:focus,
     &--focus {
       border-color: #0088fe;
+      transition: 0.3s linear;
     }
     &::placeholder {
       @include fs($fs--sm, $lh--sm);
@@ -96,12 +111,15 @@ export default {
     &--error:hover,
     &--error:focus {
       border-color: $color--alert;
+      transition: 0.3s linear;
     }
     // .v-text-field--disabled
     &--disabled,
     &--disabled:hover,
     &--disabled:focus {
       border-color: $color--white1;
+      box-shadow: none;
+      transition: 0.3s linear;
     }
   }
 }
