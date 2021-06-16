@@ -1,4 +1,3 @@
-/* eslint-disable */
 <template>
   <div class="v-autocomplete d-flex d-flex--column" :style="wrapperStyleList">
     <label
@@ -40,6 +39,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   props: {
     width: {
@@ -129,8 +129,12 @@ export default {
       if (this.currentValue) {
         const reggie = new RegExp(this.currentValue, 'ig')
         const found = text.search(reggie) !== -1
+        const index = text.indexOf(this.currentValue)
+        const result = index === -1 ?
+          '<b>' + text[0] + text.replace(reggie, this.currentValue.slice(1) + '</b>') :
+          text.replace(reggie, '<b>' + this.currentValue + '</b>') 
         if (found) {
-          return text.replace(reggie, '<b>' + this.currentValue + '</b>')
+          return result
         } else {
           return text
         }
